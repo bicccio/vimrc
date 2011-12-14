@@ -40,10 +40,13 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>lon
+
+syntax on
 filetype plugin indent on
 
 " Default color scheme
-color desert
+color molokai
+set background=dark
 
 "Directories for swp files
 set backupdir=~/.vim/backup
