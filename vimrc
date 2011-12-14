@@ -1,7 +1,13 @@
 set nocompatible
 
-" Set encoding
 set encoding=utf-8
+
+set nonumber
+set ruler
+set cursorline
+set showcmd
+
+set hidden
 
 " Whitespace stuff
 set nowrap
@@ -9,6 +15,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set backspace=indent,eol,start
+
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
@@ -20,20 +28,18 @@ set smartcase
 " Mouse
 :set mouse=a
 
-" Tab completion
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc
+let mapleader=","
 
 " Status bar
 set laststatus=2
 
 set guifont=Menlo:h13
 
-let mapleader=","
-
-set backspace=indent,eol,start
-
-syntax on
+" syntaxsier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>lon
 filetype plugin indent on
 
 " Default color scheme
