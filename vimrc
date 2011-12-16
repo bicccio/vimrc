@@ -85,7 +85,7 @@ filetype plugin indent on
 " Default color scheme
 set t_Co=256
 set background=dark
-color wombat 
+color desert 
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
