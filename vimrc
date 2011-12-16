@@ -66,9 +66,6 @@ nmap <leader>q :q!<cr>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-map <leader>ev :e! ~/.vimrc<CR>
-map <leader>sv :w! ~/.vimrc<CR>
-
 " Source the vimrc file after saving it
 if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
