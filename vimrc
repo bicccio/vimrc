@@ -25,6 +25,15 @@ set incsearch
 set ignorecase
 set smartcase
 
+set autoindent
+set si
+set wrap
+set copyindent
+
+set nobackup
+set nowb
+set noswapfile
+
 " Mouse
 :set mouse=a
 
@@ -33,7 +42,7 @@ let mapleader=","
 " Status bar
 set laststatus=2
 
-set guifont=Menlo:h13
+set guifont=Menlo:h14
 
 " syntaxsier navigation between split windows
 nnoremap <c-j> <c-w>j
@@ -41,16 +50,26 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>lon
 
+" Fast saving
+nmap <leader>w :w!<cr>
+nmap <leader>q :q!<cr>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+vmap Q gq
+nmap Q gqap
+
+imap jj <Esc>
+
 syntax on
 filetype plugin indent on
 
 " Default color scheme
-color molokai
+set t_Co=256
 set background=dark
-
-"Directories for swp files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+color wombat 
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
