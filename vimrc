@@ -1,5 +1,5 @@
 set nocompatible
-
+set showmode
 set encoding=utf-8
 
 set nonumber
@@ -34,6 +34,11 @@ set nobackup
 set nowb
 set noswapfile
 
+set cursorline
+set cursorcolumn
+
+set gdefault
+
 " Mouse
 :set mouse=a
 
@@ -43,6 +48,9 @@ let mapleader=","
 set laststatus=2
 
 set guifont=Menlo:h14
+
+set wildmenu
+set wildmode=list:full
 
 " syntaxsier navigation between split windows
 nnoremap <c-j> <c-w>j
@@ -57,6 +65,14 @@ nmap <leader>q :q!<cr>
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+map <leader>ev :e! ~/.vimrc<CR>
+map <leader>sv :w! ~/.vimrc<CR>
+
+" Source the vimrc file after saving it
+if has("autocmd")
+    autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 vmap Q gq
 nmap Q gqap
