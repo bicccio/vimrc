@@ -1,5 +1,4 @@
 set nocompatible
-set showmode
 set encoding=utf-8
 
 set nonumber
@@ -27,6 +26,7 @@ set smartcase
 
 set autoindent
 set si
+set cindent
 set wrap
 set copyindent
 
@@ -51,6 +51,14 @@ set guifont=Menlo:h14
 
 set wildmenu
 set wildmode=list:full
+
+set so=7
+set nu
+
+" visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv 
+
 
 " syntaxsier navigation between split windows
 nnoremap <c-j> <c-w>j
