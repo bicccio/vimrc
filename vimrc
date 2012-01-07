@@ -56,7 +56,7 @@ set wildmode=list:full
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>lon
+nnoremap <c-l> <c-w>l
 
 " Fast saving
 nmap <leader>w :w!<cr>
