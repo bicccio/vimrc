@@ -1,6 +1,6 @@
 set nocompatible
 set encoding=utf-8
-set autochdir
+autocmd BufEnter * silent! lcd %:p:h
 
 set nonumber
 set ruler
@@ -59,7 +59,6 @@ set nu
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv 
-
 
 " syntaxsier navigation between split windows
 nnoremap <c-j> <c-w>j
