@@ -1,5 +1,4 @@
 set nocompatible
-set showmode
 set encoding=utf-8
 
 set nonumber
@@ -27,6 +26,7 @@ set smartcase
 
 set autoindent
 set si
+set cindent
 set wrap
 set copyindent
 
@@ -52,11 +52,19 @@ set guifont=Menlo:h14
 set wildmenu
 set wildmode=list:full
 
+set so=7
+set nu
+
+" visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv 
+
+
 " syntaxsier navigation between split windows
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>lon
+nnoremap <c-l> <c-w>l
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -84,7 +92,7 @@ filetype plugin indent on
 " Default color scheme
 set t_Co=256
 set background=dark
-color wombat 
+color desert 
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
