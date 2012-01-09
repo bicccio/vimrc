@@ -71,6 +71,8 @@ if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
+autocmd VimEnter * NERDTree
+
 vmap Q gq
 nmap Q gqap
 
