@@ -1,5 +1,6 @@
 set nocompatible
 set encoding=utf-8
+set autochdir
 
 set nonumber
 set ruler
@@ -78,8 +79,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
-
-autocmd VimEnter * NERDTree
 
 vmap Q gq
 nmap Q gqap
