@@ -54,7 +54,6 @@ set wildmenu
 set wildmode=list:full
 
 set so=7
-set nu
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
