@@ -1,6 +1,6 @@
 set nocompatible
 set encoding=utf-8
-autocmd BufEnter * silent! lcd %:p:h
+"autocmd BufEnter * silent! lcd %:p:h
 
 set nonumber
 set ruler
@@ -28,7 +28,6 @@ set smartcase
 set autoindent
 set si
 set cindent
-set wrap
 set copyindent
 
 set nobackup
@@ -54,7 +53,6 @@ set wildmenu
 set wildmode=list:full
 
 set so=7
-set nu
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
