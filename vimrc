@@ -88,9 +88,10 @@ syntax on
 filetype plugin indent on
 
 " Default color scheme
-set t_Co=256
 set background=dark
 color desert 
+
+call pathogen#infect()
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
