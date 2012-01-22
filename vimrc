@@ -8,7 +8,7 @@ set showcmd
 
 " Buffer
 set hidden
-autocmd BufEnter * silent! lcd %:p:h
+" autocmd BufEnter * silent! lcd %:p:h
 
 " Whitespace stuff
 set nowrap
@@ -114,7 +114,10 @@ filetype plugin indent on
 " Default color scheme
 set t_Co=256
 set background=dark
-color desert 
+color moria 
+
+" NERDtree
+map <silent> <leader>z :NERDTreeToggle<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
