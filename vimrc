@@ -1,6 +1,6 @@
 set nocompatible
 set encoding=utf-8
-"autocmd BufEnter * silent! lcd %:p:h
+autocmd BufEnter * silent! lcd %:p:h
 
 set nonumber
 set ruler
@@ -25,15 +25,18 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Indent
 set autoindent
 set si
 set cindent
 set copyindent
 
+" Backup
 set nobackup
 set nowb
 set noswapfile
 
+" Cursor highlight
 set cursorline
 set cursorcolumn
 
@@ -42,10 +45,24 @@ set gdefault
 " Mouse
 :set mouse=a
 
+" Map leader
 let mapleader=","
 
 " Status bar
 set laststatus=2
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+function! CurDir()
+    let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+    return curdir
+endfunction
+
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    else
+        return ''
+    endif
+endfunction
 
 set guifont=Menlo:h14
 
@@ -53,6 +70,10 @@ set wildmenu
 set wildmode=list:full
 
 set so=7
+
+" Use the arrows to something usefull
+map <right> :bn<cr>
+map <left> :bp<cr>
 
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
@@ -94,3 +115,4 @@ color desert
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
