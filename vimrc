@@ -1,13 +1,14 @@
 set nocompatible
 set encoding=utf-8
-autocmd BufEnter * silent! lcd %:p:h
 
 set nonumber
 set ruler
 set cursorline
 set showcmd
 
+" Buffer
 set hidden
+autocmd BufEnter * silent! lcd %:p:h
 
 " Whitespace stuff
 set nowrap
@@ -64,8 +65,10 @@ function! HasPaste()
     endif
 endfunction
 
+" Font
 set guifont=Menlo:h14
 
+" Wild menu
 set wildmenu
 set wildmode=list:full
 
@@ -85,7 +88,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" Fast saving
+" Fast saving and quit
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 
@@ -101,8 +104,10 @@ endif
 vmap Q gq
 nmap Q gqap
 
+" fast Esc
 imap jj <Esc>
 
+" Syntax and indent by filetype
 syntax on
 filetype plugin indent on
 
@@ -115,4 +120,3 @@ color desert
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
