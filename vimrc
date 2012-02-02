@@ -8,7 +8,7 @@ set showcmd
 
 " Buffer
 set hidden
-" autocmd BufEnter * silent! lcd %:p:h
+" Autocmd BufEnter * silent! lcd %:p:h
 
 " Whitespace stuff
 set nowrap
@@ -78,11 +78,11 @@ set so=7
 map <right> :bn<cr>
 map <left> :bp<cr>
 
-" visual shifting (does not exit Visual mode)
+" Visual shifting (does not exit Visual mode)
 vnoremap < <gv
-vnoremap > >gv 
+vnoremap > >gv
 
-" syntaxsier navigation between split windows
+" Syntaxsier navigation between split windows
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -104,8 +104,12 @@ endif
 vmap Q gq
 nmap Q gqap
 
-" fast Esc
+" Fast Esc
 imap jj <Esc>
+
+" Bubbling
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
 
 " Syntax and indent by filetype
 syntax on
@@ -113,12 +117,10 @@ filetype plugin indent on
 
 " Default color scheme
 set background=dark
-color moria 
+color moria
 
 " NERDtree
 map <silent> <leader>z :NERDTreeToggle<CR>
-
-" call pathogen#infect()
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
