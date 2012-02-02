@@ -51,7 +51,7 @@ let mapleader=","
 
 " Status bar
 set laststatus=2
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 function! CurDir()
     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
     return curdir
@@ -118,7 +118,7 @@ color moria
 " NERDtree
 map <silent> <leader>z :NERDTreeToggle<CR>
 
-call pathogen#infect()
+" call pathogen#infect()
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
