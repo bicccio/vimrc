@@ -19,6 +19,8 @@ set expandtab
 set backspace=indent,eol,start
 
 set list listchars=tab:\ \ ,trail:·
+set listchars+=extends:>
+set listchars+=precedes:<
 
 " Searching
 set hlsearch
@@ -121,6 +123,9 @@ color moria
 
 " NERDtree
 map <silent> <leader>z :NERDTreeToggle<CR>
+
+" Remove trailing whitespaces before write
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
