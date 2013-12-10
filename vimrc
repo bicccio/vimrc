@@ -1,7 +1,7 @@
 set nocompatible
 set encoding=utf-8
 
-set nonumber
+" set nonumber
 set ruler
 set cursorline
 set showcmd
@@ -77,8 +77,8 @@ set wildmode=list:full
 set so=7
 
 " Use the arrows to something usefull
-map <right> :bn<cr>
-map <left> :bp<cr>
+" map <right> :bn<cr>
+" map <left> :bp<cr>
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
@@ -119,7 +119,7 @@ filetype plugin indent on
 
 " Default color scheme
 set background=dark
-color moria
+color molokai
 
 " NERDtree
 map <silent> <leader>z :NERDTreeToggle<CR>
@@ -128,9 +128,6 @@ map <silent> <leader>z :NERDTreeToggle<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
 
 " Command-T
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -140,3 +137,7 @@ map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
 map ,, <C-^>
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
