@@ -95,6 +95,13 @@ set smartcase
 set nobackup
 set nowb
 
+" Source the vimrc file after saving it
+if has("autocmd")
+    autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+" Remove trailing whitespaces before write
+autocmd BufWritePre * :%s/\s\+$//e
+
 "------------------------------------------------------------------------------
 " the swap file
 "------------------------------------------------------------------------------
@@ -157,10 +164,10 @@ map ,, <C-^>
 "------------------------------------------------------------------------------
 set ttyfast                              " this is the 21st century, people
 
-
-
-" Status bar
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+"------------------------------------------------------------------------------
+"  status bar formatting
+"------------------------------------------------------------------------------
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 function! CurDir()
     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
     return curdir
@@ -174,29 +181,31 @@ function! HasPaste()
     endif
 endfunction
 
-" Font
+"------------------------------------------------------------------------------
+"  font & colors
+"------------------------------------------------------------------------------
 set guifont=Menlo:h14
-
-" Use the arrows to something usefull
-" map <right> :bn<cr>
-" map <left> :bp<cr>
-
-" Source the vimrc file after saving it
-if has("autocmd")
-    autocmd bufwritepost .vimrc source $MYVIMRC
-endif
-
-" Default color scheme
 color molokai
 
-" Remove trailing whitespaces before write
-autocmd BufWritePre * :%s/\s\+$//e
-
+"---------------------------------------------------
+"---------------------------------------------------
+" PLUGINS
+"---------------------------------------------------
+"---------------------------------------------------
 
 "---------------------------------------------------
 " NERDtree
 " --------------------------------------------------
 map <silent> <leader>z :NERDTreeToggle<CR>
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+
+"---------------------------------------------------
+" Command-T
+" --------------------------------------------------
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
