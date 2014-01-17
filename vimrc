@@ -29,6 +29,9 @@ if exists('+colorcolumn')
     " where to line break.
 endif
 
+" json filetype as javascript
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
 "------------------------------------------------------------------------------
 " multiple windows
 "------------------------------------------------------------------------------
