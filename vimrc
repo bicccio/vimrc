@@ -190,7 +190,6 @@ endfunction
 set guifont=Menlo:h14
 color molokai
 
-
 "---------------------------------------------------
 "---------------------------------------------------
 " PLUGINS
@@ -201,6 +200,7 @@ color molokai
 " Pathogen
 " --------------------------------------------------
 execute pathogen#infect()
+Helptags
 
 "---------------------------------------------------
 " NERDtree
@@ -209,15 +209,13 @@ map <silent> <leader>z :NERDTreeToggle<CR>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
-map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
-map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
 "---------------------------------------------------
 " Command-T
 " --------------------------------------------------
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :edit %%
-map <leader>v :view %%
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
